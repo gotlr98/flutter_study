@@ -85,10 +85,18 @@ String sayHello({
   return "Hello $name, you are $age, you from ";
 }
 
+String optionalNamedHello({
+      String? name,
+      int? age,
+      String? country}){
 
+  return "Hello $name, you are $age, you from ";
+}
 
 void main(){
 
   print(namedHello(name: "sik", age: 21, country: "korea"));
   print(sayHello());
+
+
 }
