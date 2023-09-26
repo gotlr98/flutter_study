@@ -93,6 +93,8 @@ String optionalNamedHello({
   return "Hello $name, you are $age, you from ";
 }
 
+String capitalizeName(String? name) => name?.toUpperCase() ?? 'ANON';
+
 void main(){
 
   print(namedHello(name: "sik", age: 21, country: "korea"));
