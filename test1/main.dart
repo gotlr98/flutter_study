@@ -100,5 +100,8 @@ void main(){
   print(namedHello(name: "sik", age: 21, country: "korea"));
   print(sayHello());
 
+  String? name;
+  name ??= 'sik';
+
 
 }
