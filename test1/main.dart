@@ -95,6 +95,14 @@ String optionalNamedHello({
 
 String capitalizeName(String? name) => name?.toUpperCase() ?? 'ANON';
 
+List<int> reverseListOfNumbers(List<int> list){
+
+  var reversed = list.reversed;
+
+  return reversed.toList();
+}
+
+typedef listint = List<int>;
 void main(){
 
   print(namedHello(name: "sik", age: 21, country: "korea"));
@@ -102,6 +110,5 @@ void main(){
 
   String? name;
   name ??= 'sik';
-
 
 }
