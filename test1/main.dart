@@ -103,6 +103,12 @@ List<int> reverseListOfNumbers(List<int> list){
 }
 
 typedef listint = List<int>;
+
+class Player{
+  var name;
+  var str;
+  var int;
+}
 void main(){
 
   print(namedHello(name: "sik", age: 21, country: "korea"));
@@ -110,5 +116,8 @@ void main(){
 
   String? name;
   name ??= 'sik';
+
+  var sik = Player();
+  sik.name = "haesik";
 
 }
