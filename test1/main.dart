@@ -104,25 +104,114 @@ List<int> reverseListOfNumbers(List<int> list){
 
 typedef listint = List<int>;
 
+enum Team{red, blue}
+
 class Player{
-  String name = "sik";
-  int xp = 1500;
+  String name;
+  int xp;
+  Team team;
+  int age;
+
+  Player({required this.name,
+          required this.xp,
+          required this.team, 
+          required this.age});
+
+  Player.createBluePlayer({
+    required String name, 
+    required int age})
+  : this.age = age,
+    this.name = name,
+    this.team = Team.blue,
+    this.xp = 0;
+
+  Player.createRedPlayer({
+    required String name, 
+    required int age})
+  : this.age = age,
+    this.name = name,
+    this.team = Team.red,
+    this.xp = 0;
+
+  Player.fromJson(Map<String, dynamic> playerJson) :
+    name = playerJson['name'],
+    xp = playerJson['xp'],
+    team = playerJson['team'],
+    age = playerJson['age'];
 
   void sayHello(){
     print("hello my name is $name");
   }
 }
+
+
+
+// void main(){
+  
+
+  // String? name;
+  // name ??= 'sik';
+
+
+  // var sik = Player.createBluePlayer(
+  //   name: "sik",
+  //   age: 21,
+  // );
+
+  // var hae = Player.createRedPlayer(
+  //   name: "hae",
+  //   age: 21,
+  // );
+
+  // sik.sayHello();
+
+  // var apiEX = [
+  //   {
+  //     "name":"sik",
+  //     "team":"red",
+  //     "xp":0,
+  //     "age":0,
+  //   },
+  //   {
+  //     "name":"hae",
+  //     "team":"red",
+  //     "xp":0,
+  //     "age":0,
+  //   },
+  //   {
+  //     "name":"jang",
+  //     "team":"red",
+  //     "xp":0,
+  //     "age":0,
+  //   }
+  // ];
+
+  // apiEX.forEach((playerJson){
+  //   var player = Player.fromJson(playerJson);
+  //   player.sayHello();
+  // });
+
+  // var haea = Player(name: 'sik', xp: 1, team: 'e', age: 1)
+
+  // ..name = 'sss'
+  // ..xp = 1
+  // ..age = 3;
+
+// }
+
+abstract class Human{
+
+  void walk();
+
+}
+
+class exHuman extends Human{
+
+  void walk(){
+    print("walk");
+  }
+  
+}
 void main(){
-
-  print(namedHello(name: "sik", age: 21, country: "korea"));
-  print(sayHello());
-
-  String? name;
-  name ??= 'sik';
-
-  var sik = Player();
-  sik.name = "haesik";
-
-  sik.sayHello();
 
 }
