@@ -207,11 +207,15 @@ abstract class Human{
 
 class exHuman extends Human{
 
+  late String name;
+
+  exHuman(this.name);
+
   void walk(){
     print("walk");
   }
   
 }
 void main(){
-
+  var me = exHuman("sik");
 }
