@@ -102,47 +102,47 @@ List<int> reverseListOfNumbers(List<int> list){
   return reversed.toList();
 }
 
-typedef listint = List<int>;
+// typedef listint = List<int>;
 
-enum Team{red, blue}
+// enum Team{red, blue}
 
-class Player{
-  String name;
-  int xp;
-  Team team;
-  int age;
+// class Player{
+//   String name;
+//   int xp;
+//   Team team;
+//   int age;
 
-  Player({required this.name,
-          required this.xp,
-          required this.team, 
-          required this.age});
+//   Player({required this.name,
+//           required this.xp,
+//           required this.team, 
+//           required this.age});
 
-  Player.createBluePlayer({
-    required String name, 
-    required int age})
-  : this.age = age,
-    this.name = name,
-    this.team = Team.blue,
-    this.xp = 0;
+//   Player.createBluePlayer({
+//     required String name, 
+//     required int age})
+//   : this.age = age,
+//     this.name = name,
+//     this.team = Team.blue,
+//     this.xp = 0;
 
-  Player.createRedPlayer({
-    required String name, 
-    required int age})
-  : this.age = age,
-    this.name = name,
-    this.team = Team.red,
-    this.xp = 0;
+//   Player.createRedPlayer({
+//     required String name, 
+//     required int age})
+//   : this.age = age,
+//     this.name = name,
+//     this.team = Team.red,
+//     this.xp = 0;
 
-  Player.fromJson(Map<String, dynamic> playerJson) :
-    name = playerJson['name'],
-    xp = playerJson['xp'],
-    team = playerJson['team'],
-    age = playerJson['age'];
+//   Player.fromJson(Map<String, dynamic> playerJson) :
+//     name = playerJson['name'],
+//     xp = playerJson['xp'],
+//     team = playerJson['team'],
+//     age = playerJson['age'];
 
-  void sayHello(){
-    print("hello my name is $name");
-  }
-}
+//   void sayHello(){
+//     print("hello my name is $name");
+//   }
+// }
 
 
 
@@ -199,23 +199,52 @@ class Player{
 
 // }
 
-abstract class Human{
+// abstract class Human{
 
-  void walk();
+//   void walk();
 
+// }
+
+// class exHuman extends Human{
+
+//   late String name;
+
+//   exHuman(this.name);
+
+//   void walk(){
+//     print("walk");
+//   }
+  
+// }
+
+class Human{
+  final String name;
+  Human(this.name);
+  void sayHello(){
+    print("Hi my name is $name");
+  }
+}
+enum Team{
+  blue, red
 }
 
-class exHuman extends Human{
+class Player extends Human{
+  final Team team;
 
-  late String name;
+  Player({
+    required this.team,
+    required String name,
+  }) : super(name);
 
-  exHuman(this.name);
-
-  void walk(){
-    print("walk");
+  @override 
+  void sayHello() {
+    super.sayHello();
+    print('and I play for $team');
   }
-  
 }
 void main(){
-  var me = exHuman("sik");
+  // var me = exHuman("sik");
+  var me = Player(team: Team.blue, name: 'sik');
+  me.sayHello();
+
 }
