@@ -242,6 +242,27 @@ class Player extends Human{
     print('and I play for $team');
   }
 }
+
+class Strong{
+
+  final double str = 1500.99;
+}
+
+class Quick{
+
+  void runQuick(){
+    print("run");
+  }
+}
+
+class quexRunner with Strong, Quick{
+
+  final Team team;
+
+  quexRunner({
+    required this.team,
+  });
+}
 void main(){
   // var me = exHuman("sik");
   var me = Player(team: Team.blue, name: 'sik');
