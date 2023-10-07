@@ -11,12 +11,17 @@ class App extends StatelessWidget{
     
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hello flutter"),
-        ),
-        body: Center(
-          child: Text("Hello world"),
-        ),
+        backgroundColor: Colors.black,
+        body: Column(
+          children: [
+            Row(
+              children: [
+                  Text("Hey, Sik"),
+                  Text("Welcome back"),
+              ],
+            )
+          ],
+        )
       ),
     );
 
