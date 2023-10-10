@@ -14,9 +14,17 @@ class App extends StatelessWidget{
         backgroundColor: Colors.black,
         body: Column(
           children: [
+            SizedBox(
+              height: 80,
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                  Text("Hey, Sik"),
+                  Text("Hey, Sik",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                   Text("Welcome back"),
               ],
             )
