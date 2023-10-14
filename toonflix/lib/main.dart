@@ -22,6 +22,11 @@ class _AppState extends State<App> {
           titleLarge: TextStyle(
             color: Colors.red,
           ),
+          displayLarge: TextStyle(
+            color: Colors.blue,
+            fontSize: 24,
+            decorationColor: Colors.grey,
+          ),
         ),
       ),
       home: const Scaffold(
