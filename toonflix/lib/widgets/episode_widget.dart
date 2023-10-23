@@ -7,15 +7,18 @@ class Episode extends StatelessWidget {
   const Episode({
     super.key,
     required this.episode,
+    required this.webtoon_id,
   });
+
+  final String webtoon_id;
+  final WebtoonEpisodeModel episode;
 
   onButtonTap() async {
     // final url = Uri.parse('https://google.com');
     // await launchUrl(url);
-    await launchUrlString('https://google.com');
+    await launchUrlString(
+        'https://comic.naver.com/webtoon/detail?titleId=$webtoon_id&no=${episode.id}');
   }
-
-  final WebtoonEpisodeModel episode;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class Episode extends StatelessWidget {
       child: Container(
           margin: const EdgeInsets.only(bottom: 20),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(18),
             color: Colors.green.shade400,
           ),
           child: Padding(
