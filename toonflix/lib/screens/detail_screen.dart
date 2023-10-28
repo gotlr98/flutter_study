@@ -40,6 +40,11 @@ class _DetailScreenState extends State<DetailScreen> {
         elevation: 2,
         foregroundColor: Colors.green,
         backgroundColor: Colors.white,
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.favorite_outline_rounded))
+        ],
         title: Text(
           widget.title,
           style: const TextStyle(
@@ -110,7 +115,10 @@ class _DetailScreenState extends State<DetailScreen> {
                     return Column(
                       children: [
                         for (var episode in snapshot.data!)
-                          Episode(episode: episode, webtoon_id: ,)
+                          Episode(
+                            episode: episode,
+                            webtoon_id: widget.id,
+                          )
                       ],
                     );
                   }
