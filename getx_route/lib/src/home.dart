@@ -42,6 +42,13 @@ class Home extends StatelessWidget {
                     Get.toNamed("/user/1234?name=sik&age=27");
                   },
                   child: const Text("static url")),
+              ElevatedButton(
+                  onPressed: () {
+                    // Navigator.of(context).push(
+                    //     MaterialPageRoute(builder: (_) => const FirstPage()));
+                    Get.toNamed("/simple_state_manage");
+                  },
+                  child: const Text("status handle")),
             ],
           ),
         ));
