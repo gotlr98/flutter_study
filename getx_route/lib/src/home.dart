@@ -49,6 +49,13 @@ class Home extends StatelessWidget {
                     Get.toNamed("/simple_state_manage");
                   },
                   child: const Text("status handle")),
+              ElevatedButton(
+                  onPressed: () {
+                    // Navigator.of(context).push(
+                    //     MaterialPageRoute(builder: (_) => const FirstPage()));
+                    Get.toNamed("/test_named");
+                  },
+                  child: const Text("Text Named Page")),
             ],
           ),
         ));
