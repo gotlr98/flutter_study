@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_route/src/pages/simple_state_manage.dart';
 
 import 'pages/normal/first.dart';
 
@@ -46,16 +47,9 @@ class Home extends StatelessWidget {
                   onPressed: () {
                     // Navigator.of(context).push(
                     //     MaterialPageRoute(builder: (_) => const FirstPage()));
-                    Get.toNamed("/simple_state_manage");
+                    Get.to(const SimpleStateManagePage());
                   },
                   child: const Text("status handle")),
-              ElevatedButton(
-                  onPressed: () {
-                    // Navigator.of(context).push(
-                    //     MaterialPageRoute(builder: (_) => const FirstPage()));
-                    Get.toNamed("/test_named");
-                  },
-                  child: const Text("Text Named Page")),
             ],
           ),
         ));
