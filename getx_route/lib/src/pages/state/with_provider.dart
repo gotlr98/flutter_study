@@ -18,7 +18,8 @@ class WithProvider extends StatelessWidget {
         }),
         ElevatedButton(
             onPressed: () {
-              Provider.of<CountControllerWithProvider>(context).increase();
+              Provider.of<CountControllerWithProvider>(context, listen: false)
+                  .increase();
             },
             child: const Text("+", style: TextStyle(fontSize: 50)))
       ],
